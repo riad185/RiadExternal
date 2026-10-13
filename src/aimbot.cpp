@@ -6,6 +6,11 @@
 #include <thread>
 #include <atomic>
 #include <cmath>
+#include <mutex>
+#include <vector>
+
+extern std::vector<PlayerInfo> g_players;
+extern std::mutex g_players_mtx;
 
 namespace aimbot {
     static std::atomic<bool> g_running{ false };

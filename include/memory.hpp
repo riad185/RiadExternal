@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <string>
 #include <atomic>
+#include <vector>
 #include "kdrv_protocol.h"
 
 namespace mem {

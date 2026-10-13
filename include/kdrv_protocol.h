@@ -1,5 +1,6 @@
 #pragma once
 #include <Windows.h>
+#include <winioctl.h>
 
 #define LUNA_DEVICE_NAME     L"\\Device\\lunadrv"
 #define LUNA_SYMLINK_NAME    L"\\DosDevices\\lunadrv"

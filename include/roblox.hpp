@@ -57,7 +57,7 @@ struct RbxVisualEngine {
     bool valid() const { return ptr != 0; }
     bool read_view_matrix(Matrix4& out) const {
         if (!ptr) return false;
-        return mem::vm_read(mem::g_proc, (LPCVOID)(ptr + offsets::VisualEngine::ViewMatrix), out, sizeof(Matrix4), nullptr) != 0;
+        return mem::vm_read(mem::g_proc, (LPCVOID)(ptr + offsets::VisualEngine::ViewMatrix), (LPVOID)&out, sizeof(Matrix4), nullptr) != 0;
     }
     Vec2 dimensions() const { return rpm<Vec2>(ptr + offsets::VisualEngine::Dimensions); }
     uintptr_t render_view() const { return rpm<uintptr_t>(ptr + offsets::VisualEngine::RenderView); }

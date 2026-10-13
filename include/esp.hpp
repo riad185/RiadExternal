@@ -60,6 +60,9 @@ namespace esp {
         bool  draw_hud       = false;
         bool  draw_watermark = false;
         bool  draw_crosshair = false;
+        float crosshair_size = 7.f;
+        ImVec4 col_crosshair = { 0.00f, 1.00f, 0.47f, 0.90f };
+        ImVec4 col_head     = { 1.00f, 1.00f, 1.00f, 1.f };
         int   key_fly    = 0x70;
         int   key_noclip = 0x71;
         int   key_esp    = 0x73;
