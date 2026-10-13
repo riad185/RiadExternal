@@ -1,0 +1,37 @@
+name: Build RiadExternal
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: x64
+
+    - name: Setup CMake
+      uses: jwlawson/actions-setup-cmake@v2
+      with:
+        cmake-version: '3.28'
+
+    - name: Configure
+      run: cmake -S . -B build -A x64
+      shell: cmd
+
+    - name: Build
+      run: cmake --build build --config Release
+      shell: cmd
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: RiadExternal
+        path: build/Release/RiadExternal.exe
