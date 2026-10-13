@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <functional>
+#include <atomic>
 #include <imgui.h>
 
 namespace menu {

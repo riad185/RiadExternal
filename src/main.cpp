@@ -35,6 +35,8 @@ std::atomic<uintptr_t>  g_aim_target{ 0 };
 std::atomic<bool>       g_scan_done{ false };
 std::atomic<bool>       g_scan_ok{ false };
 
+namespace aimbot { Matrix4 g_view_matrix; Vec2 g_screen; uintptr_t g_target; }
+
 std::vector<PlayerInfo> g_players_temp;
 std::mutex             g_players_mtx;
 

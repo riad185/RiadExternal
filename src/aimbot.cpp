@@ -9,7 +9,9 @@
 
 namespace aimbot {
     static std::atomic<bool> g_running{ false };
-    static uintptr_t g_target{ 0 };
+    uintptr_t g_target{ 0 };
+    Matrix4 g_view_matrix{};
+    Vec2 g_screen{};
 
     static bool visible_heuristic(Vec3 cam_pos, Vec3 target_pos, const std::vector<PlayerInfo>& players, const Matrix4& vm, Vec2 screen) {
         Vec2 s = world_to_screen(vm, target_pos, screen.x, screen.y); if (s.x < 0.f && s.y < 0.f) return false; if (s.x < 0.f || s.x > screen.x || s.y < 0.f || s.y > screen.y) return false;

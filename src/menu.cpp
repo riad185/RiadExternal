@@ -258,6 +258,7 @@ namespace {
             ImGui::Combo("Priority", &esp::cfg.aim_priority, pri, 2);
             Section("Status");
             ImGui::Text("Target: %s", aimbot::g_target ? "Locked" : "None");
+            ImGui::Text("Screen: %.0fx%.0f", aimbot::g_screen.x, aimbot::g_screen.y);
             EndFrame();
         }
     }
