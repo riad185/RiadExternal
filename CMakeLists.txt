@@ -44,7 +44,7 @@ target_compile_definitions(RiadExternal PRIVATE
 set_target_properties(RiadExternal PROPERTIES OUTPUT_NAME "RiadExternal")
 
 if(MSVC)
-    set_property(TARGET RiadExternal APPEND_STRING_PROPERTY LINK_FLAGS " /MANIFEST:NO")
+    set_property(TARGET RiadExternal APPEND_STRING PROPERTY LINK_FLAGS " /MANIFEST:NO")
 endif()
 
 set_property(TARGET RiadExternal PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
